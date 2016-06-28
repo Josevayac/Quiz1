@@ -1,0 +1,70 @@
+﻿@model IEnumerable<QuizCurri.Models.Proyectos>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Proyectos</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("INSERTAR NUEVO PROYECTO", "Create")
+    </p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PrjName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrjDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaInicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaFinal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ubicacion)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrjName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrjDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaInicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaFinal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ubicacion)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {id = item.PrjId}) |
+                @Html.ActionLink("Details", "Details", new {id = item.PrjId}) |
+                @Html.ActionLink("Delete", "Delete", new {id = item.PrjId})
+            </td>
+        </tr>
+    }
+
+</table>
+
+    <div>
+        @Html.ActionLink("Back to Home", "Index")
+    </div>
+</body>
+</html>

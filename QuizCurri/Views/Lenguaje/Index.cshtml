@@ -1,0 +1,41 @@
+﻿@model IEnumerable<QuizCurri.Models.Lenguajes>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("INSERTAR NUEVO LENGUAJE", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LenguajeName)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LenguajeName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.LenguajeId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.LenguajeId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.LenguajeId })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

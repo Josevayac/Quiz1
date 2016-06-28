@@ -29,5 +29,9 @@ namespace QuizCurri.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<QuizCurri.Models.Proyectos> Proyectos { get; set; }
+
+        public System.Data.Entity.DbSet<QuizCurri.Models.Lenguajes> Lenguajes { get; set; }
     }
 }
